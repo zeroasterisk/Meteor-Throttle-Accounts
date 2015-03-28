@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function (api) {
   api.versionsFrom("0.9.0");
   api.use(['meteor', 'underscore'], 'server');
-  api.use('zeroasterisk:throttle', 'server');
+  api.use('zeroasterisk:throttle@0.2.0', 'server');
   api.imply('zeroasterisk:throttle');
   // Export the object 'Throttle' to packages or apps that use this package.
   api.export('ThrottleAccounts', 'server');
