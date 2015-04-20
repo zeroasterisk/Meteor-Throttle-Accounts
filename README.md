@@ -1,9 +1,13 @@
 # An Extension of zeroasterisk:throttle for Meteor Accounts
 
-The core package for throttling is here:
-
-* https://atmospherejs.com/zeroasterisk/throttle
-* https://github.com/zeroasterisk/Meteor-Throttle
+* http://throttle-example.meteor.com
+ * [https://github.com/zeroasterisk/Meteor-Throttle-Example](https://github.com/zeroasterisk/Meteor-Throttle-Example)
+* main *throttle* package
+ * [https://github.com/zeroasterisk/Meteor-Throttle](https://github.com/zeroasterisk/Meteor-Throttle)
+ * [Atmosphere Package](https://atmospherejs.com/zeroasterisk/throttle)
+* additiional *throttle* package
+ * [https://github.com/zeroasterisk/Meteor-Throttle-Accounts](https://github.com/zeroasterisk/Meteor-Throttle-Accounts)
+ * [Atmosphere Package](https://atmospherejs.com/zeroasterisk/throttle-accounts)
 
 
 This Extension of that package will throttle login attempts and account
@@ -11,13 +15,19 @@ creation attempts for your site:
 
 ## Install
 
-`$ meteor add zeroasterisk:throttle`
-`$ meteor add zeroasterisk:throttle-accounts`
+    $ meteor add zeroasterisk:throttle
+    $ meteor add zeroasterisk:throttle-accounts
 
 ## Configuration
 
 ```
 if (Meteor.isServer) {
+
+  // core Throttle config
+  Throttle.setDebugMode(false);  // default = false
+  Throttle.setScope("global");   // default = global
+  //   NOTE: if you switch to "user" here, no other Accounts specific scopes are functional
+
   // Accounts.validateLoginAttempt()
   ThrottleAccounts.login('global', 20, 1000, 'Under Heavy Load - too many login attempts');
   ThrottleAccounts.login('ip', 3, 1000, 'Only 3 Login Attempts from the same IP every second');
