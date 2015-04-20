@@ -85,11 +85,13 @@ if (Meteor.isServer) {
       throw new Meteor.Error(500, 'ThrottleAccounts.create(' + scope +', ....) -- We can not support connection or ip scope for createi()');
     }
 
+    /*
     console.log(
       'ThrottleAccounts.create() validation setup: ' +
       'allow ' + allowedCount + ' new user creation attempt every ' + expireInMS + ' MS ' +
       '(scope: ' + scope + ')'
     );
+    */
 
 
     // cleanup before setup
