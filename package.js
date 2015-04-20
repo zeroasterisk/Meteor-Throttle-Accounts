@@ -2,7 +2,7 @@
 Package.describe({
   name: "zeroasterisk:throttle-accounts",
   summary: "A secure means of limiting account login/create attempts",
-  version: "0.0.2",
+  version: "0.0.3",
   git: "https://github.com/zeroasterisk/Meteor-Throttle-Accounts.git"
 });
 
